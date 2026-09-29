@@ -1,0 +1,35 @@
+# Vivado generated files
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.jou
+*.log
+*.str
+*.bit
+*.dcp
+*.ltx
+*.wdb
+*.wcfg
+*.xpr
+
+# Verilator / simulation outputs
+obj_dir/
+*.vcd
+
+# Compiled firmware and host build artifacts
+*.o
+*.a
+*.bin
+*.dump
+result-verilator
+dumphex
+test
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+*.swp

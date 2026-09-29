@@ -1,0 +1,10 @@
+40000237 // lui  x4, 0x40000 -- MMIO base
+00822103 // lw   x2, 8(x4)  -- read status
+00217113 // andi x2, x2, 2  -- isolate RX valid
+fe010ce3 // beq  x2, x0, -8 -- wait for received byte
+00c22083 // lw   x1, 12(x4) -- read and acknowledge RX byte
+00822103 // lw   x2, 8(x4)  -- read status
+00117113 // andi x2, x2, 1  -- isolate TX busy
+fe011ce3 // bne  x2, x0, -8 -- wait for transmitter
+00122223 // sw   x1, 4(x4)  -- echo byte
+fe1ff06f // jal  x0, -32    -- repeat
